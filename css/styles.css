@@ -63,7 +63,7 @@ figure {
   right: 0;
   width: 100%;
   z-index: 100;
-  background-color: #ffffff;
+  background-color: lightgray;
 }
 
 .site-nav-list,
@@ -195,16 +195,34 @@ figure {
 .about > p {
   margin: 0;
 }
+ /* Adjustment starting 768px */
 
 @media (min-width: 768px) {
-  .site-nav {
-    position: fixed;
-    left: 0px;
-    top: 0px;
+
+    main {
+      width: 90%;
+      margin-right: 0px;
+      margin-left: auto;
+    }
+
+  /* Navigation bar */
+  .site-header {
+    margin-left: 0px;
+    margin-right: auto;
     height: 100%;
     width: 10%;
     z-index: 1;
-    padding-top: 90px;
+    position: relative;
+  }
+
+  .site-nav {
+    position: fixed;
+    margin-left: 0px;
+    margin-right: auto;
+    height: 100%;
+    width: 10%;
+    z-index: 1;
+    padding-top: 100px;
   }
 
   .site-nav-item {
@@ -217,20 +235,21 @@ figure {
     margin: auto;
   }
 
-  .movie {
-    width: 90%;
-    margin-left: 100px;
-  }
+/* Movie */
+
   .movie-overview {
     display: block;
     z-index: 1;
   }
 
+/* Footer */
+
   .site-footer {
     background-color: black;
     color: white;
     width: 90%;
-    margin-left: 100px;
+    margin-right: 0px;
+    margin-left: auto;
   }
 
   .footer-nav {
@@ -254,5 +273,59 @@ figure {
     background-color: black;
     color: white;
 
+  }
+}
+
+/* Adjustment starting at 992px */
+
+@media (min-width: 992px) {
+
+  main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 90%;
+    margin-right: 0px;
+    margin-left: auto;
+  }
+
+  /* Navigation bar on the left */
+
+  .site-header {
+    position: fixed;
+    height: 100%;
+    width: 10%;
+    z-index: 1;
+    padding: 0;
+  }
+
+  .site-logo {
+    width: 5%
+  }
+
+  /* Movie section */
+
+  .movie-overview {
+    display: none;
+  }
+
+  .movie {
+    width: 100%;
+  }
+
+  .movie:first-child {
+    grid-column: 1 / 4;
+  }
+
+  .movie:first-child .movie-overview {
+    display: block;
+    z-index: 1;
+  }
+
+/* Footer section */
+
+  .site-footer {
+    width: 90%;
+    margin-right: 0px;
+    margin-left: auto;
   }
 }
